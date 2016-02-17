@@ -7,9 +7,10 @@ app.controller('ProductsController', function($scope, $http){
 	console.log("controller called");
 	$scope.name = 'hi';
 	$scope.products = [];
-	$http.get('/products.json').then(
+	$http.get('http://localhost:3000/products.json').then(
 			function(data){
 				console.log("-works-");
+				console.log(data);
 				$scope.products = data["data"];
 			},
 			function(e){
